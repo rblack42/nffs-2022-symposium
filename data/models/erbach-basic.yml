@@ -1,0 +1,22 @@
+---
+  name: "Erbach Basic"
+  model:
+    wing_area:
+        - 150.0
+        - "inch ** 2"
+    wing_chord:
+      - 5.5
+      - inches
+    wing_height:
+      - 3.0
+      - inches
+    stab_area:
+        - 0.4
+        - "inches ** 2"
+    model_weight:
+      - 0.070
+      - "ounces"
+    ac-wing-to-stab:
+      - 17.0
+      - inches
+

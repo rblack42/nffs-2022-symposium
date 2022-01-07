@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: atmospheric-data
+  file: model/hodson-wart-a6
+- file: mclean-method
+- file: bibliography
+- file: biography

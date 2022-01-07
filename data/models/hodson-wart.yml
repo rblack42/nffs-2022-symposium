@@ -1,0 +1,22 @@
+---
+  name: "Hodson Wart"
+  model:
+    wing_area:
+        - 30.0
+        - "inch ** 2"
+    wing_chord:
+      - 2.0
+      - inches
+    wing_height:
+      - 1.5
+      - inches
+    stab_area:
+        - 15.979
+        - "inches ** 2"
+    model_weight:
+      - 1.2
+      - "grams"
+    ac-wing-to-stab:
+      - 13.25
+      - inches
+

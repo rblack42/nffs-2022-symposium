@@ -1,0 +1,43 @@
+\subsection{Bottom-up Design}
+
+We could work through our design in a ``top-down'' manner, breaking up the model
+into major assemblies, then breaking down those assemblies into individual parts
+that need to be manufactured to complete the real model. However, using \osc\ we
+cannot see much until we have parts  to build with. For that reason, we will
+begin with simple parts, then assemble them by properly positioning things to
+create assemblies. In the final step, we will put everything together so we can
+see our completed model! This all should make sense to an indoor model builder.
+You cut out the pieces you need, glue things together to form wings and
+stabilizers for instance, then assemble the final model using something like
+paper tubes perhaps.
+
+We will start off by writing down the constraints we must obey to compete in the
+\LPP\ class. I create a data file for this information, then add various other
+dimensions as I make design decisions. I can {\it include} this data file in any
+other file that needs this data.
+
+As soon as we have enough information in hand to define the basic parts, we will
+begin building our CAD models. This will involve writing some simple code
+describing individual parts. Along the way, we will be defining other parameters
+like material thickness and overall parts dimensions.  As much as possible
+dimensions will be derived from other data parameters defined in the design. For
+example, the rules constrain the maximum chord for the wing. Once i know how
+thick my leading and trailing edges will be, I can calculate the chord of the
+rib I will place between those two parts. The constraints drive the process, as
+much as possible. We will document each design decision we make in the form of
+parameters, or math equations that are driven by other parameters in our design.
+
+\subsubsection{Parametric designs}
+
+Setting up the design in this way lets us adapt this design to create other
+designs. We might need to change the overall wingspan of the model, to compete
+in another class. We should be able to modify our constraining parameters, and
+let \osc generate a new model for the new rules. This is far better than simply
+scaling a PDF file so the wingspan is different.
+
+A further benefit of this process is that you no longer confront plans that
+leave out critical dimensions. I do not like trying to figure out how to build
+some part by taking my digital calipers and measure things on a plan, or worse,
+a  PDF printout, then trying to figure out the real dimensions! \osc forces you
+to completely define your model.
+

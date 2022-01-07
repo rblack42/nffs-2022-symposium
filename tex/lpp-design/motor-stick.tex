@@ -1,0 +1,52 @@
+\subsection{Motor Stick}
+
+With the flying surfaces set up, we can now turn to the fuselage parts. The
+most important of these is the motor stick, which supports everything else in
+the model. The motor stick must also bear the forces imposed by the wound up
+rubber motor that will power this craft.
+
+We can set up the motor stick several ways, but I will use a {\it polygon} to
+define the basic shape, then use {\it linear\_extrude} to generate the actual
+object.
+
+Here is the basic layout we will use:
+
+\importtikzfigure{motor-stick}{Basic Motor Stick}
+
+This design provides support for the front bearing and the rear hook. The
+module only needs one parameter: the thickness of the stock you will be using
+for this part.
+
+\begin{lstlisting}
+module motor_stick(thickness=1/8) {
+  ...
+}
+\end{lstlisting}
+
+The final shape is centered along the {\bf X axis} with the bottom of the stick
+lying on that axis to make final assembly of the model easier.
+
+\importimage{motor-stick.png}{motor-stick.png}
+
+I added one new feature to this module, which will not show up in the printed
+article. You can ask \osc\ to color shapes using the {\it color} command. For
+this motor stick, I just added this code to the module:
+
+\begin{lstlisting}
+
+module motor_stick*thickness=1/8) {
+  color(WOOD_Balsa)
+    rotate[(90,0,0)])
+      translate([0,0,thickness/2])
+  ...
+}
+\end{lstlisting}
+
+I also added a single line at the top of the file:
+
+\begin{lstlisting}
+include <colors.scad>
+\end{lstlisting}
+
+The {\bf colors.scad} file is one I found online. I added my own color for balsa!
+

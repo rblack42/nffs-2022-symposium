@@ -1,0 +1,37 @@
+\subsection{Propeller}
+
+Now for an interesting component - the propeller. This is not just a flat part,
+it has an interesting shape, and figuring out how to model this thing took some
+time. In the end, I remembered how most of us build indoor propellers. We take a
+thin sheet of balsa, cut out the blade profile we want, then soak that blade
+for a while. Next, we tape it to the side of a round can at an angle and bake
+it. When it dries, it has a curvature that will work fairly well.
+
+It struck me that I could generate the same shape by creating a polygon that
+represents the blade outline, then extrude that to form a very thick blade
+(bigger that the can!) I then build a hollow cylinder with a thickness that
+matches our desired blade thickness and slide the extruded blade into that cylinder.
+The {\it intersection} of these two shapes will leave us with a curved blade.
+Neat!
+
+The shape of the blade seems to be a matter of taste. Many builders design
+blades that will provide for a flair so that the prop will have a higher pitch
+when the plane is launched with full torque from the motor. Moving the prop
+spar toward the trailing edge of the blade provides this flair.
+
+I decided to generate a simple blade layout, with parameters that can be
+adjusted to give the flair you want. Figure \ref{fig:prop-blade} shows the
+general layout.
+
+\importskinnytikzfigure{prop-blade}{Prop Blade Layout}
+
+The prop spar is a tapered cylinder, something easy to generate with the {\it
+cylinder} shape. Parameters are provided so the size of the spar can be
+adjusted.
+i
+Figure \ref{fig:prop-blade.png} shows the final blade produced. Since the code is
+again a bot complicated, I will refer you t the project website.
+
+\importimage{prop-blade.png}{Prop Blade}
+
+

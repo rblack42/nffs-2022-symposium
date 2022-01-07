@@ -1,0 +1,14 @@
+wheel
+matplotlib
+numpy
+numpy-stl
+pandoc
+jupyter-book
+jupyter-contrib-nbextensions
+git+git://github.com/mkrphys/ipython-tikzmagic.git
+sphinx
+sphinxcontrib-bibtex
+sphinxcontrib-programoutput
+pint
+sympy
+scipy

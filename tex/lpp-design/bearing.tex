@@ -1,0 +1,44 @@
+\subsection{Bearing Geometry}
+
+We will use a simple aluminium sheet bearing for this model. The basic geometry
+is shown in \ref{fig:bearing-geometry}.
+
+\importtikzfigure{bearing-geometry}{Bearing Geometry}
+
+We will use this diagram to create a 2D shape, then extrude it into a 3D shape.
+The prop shaft will sit at the bottom of this shape, so we will add cylindrical
+parts at the two bottom edges to enclose the shaft. All of this will be wrapped
+up into a general purpose module we can reuse in other projects.
+
+The important parameters in the digram are the length, height, material thickness, and
+the slope of the front part of the bearing. All bends are made at a radius of
+twice the material thickness. We can choose the length of the top part, or the
+length of the front flat and everything else can be calculated with a bit of
+trigonometry.
+
+From this diagram, we can derive these equations:
+
+\begin{eqnarray}
+  d &=& h - 2t, \\
+  b sin(\alpha) + c &=& l - 4t, \\
+  b cos(\alpha) + a &=& d
+\end{eqnarray}
+
+That give three equations in three unknowns. A bit of {\it SymPy} will give us
+the formulas we need to generate this shape.
+
+\begin{sympysilent}
+a,b,c,d,h,l,t,alpha = sympy.symbols("a b c d b l t alpha")
+
+eq1 = d - h + 2*t
+eq2 = b*sympy.sin(alpha) + c - l + 4*t
+eq3 = b * sympy.cos(alpha) + a -d;
+
+sol = sympy.solve([eq1,eq2,eq3], [a,b,c])
+\end{sympysilent}
+
+\begin{equation}
+\left\{ a : - d \cos{\left(\alpha \right)} + d - 2 t \cos{\left(\alpha \right)}, \  b : d + 2 t, \  c : - d \sin{\left(\alpha \right)} + l - 2 t \sin{\left(\alpha \right)} - 4 t\right\}
+\end{equation}
+
+

@@ -1,0 +1,25 @@
+\subsection{Design Constraints}
+
+The {\it Limited Pennyplane} class rules define a few constraints on dimensions
+for our model. Here is the start of my data file, where the important class dimensions are
+defined. All of these are {\it global variables}.:
+
+\includecode{scad/math-magik-data.scad}
+
+What these constraints mean is that the model must fit in a box that measures {\bf
+max\_wing\_span} wide by {\bf max\_length} long. There is no limit on how
+tall this box can be.
+
+Furthermore, the wing must fit in a smaller box measuring {\bf max\_wing\_span}
+by {\bf max\_wing\_chord}. The stabilizer must fit in a similar box measuring
+{\bf max\_stab\_span} by {\bf max\_stab\_chord}. There are no constraints on where
+these boxes fit inside the outer box. The propeller is only limited by
+diameter, blade shape it up to the designer. However, the {\bf max\_length}
+constraint is measured from the forward-most point, usually on the propeller,
+to the aft-most point on the model. We could build a pusher, but I have not
+considered that idea.
+
+\importtikzfigure{lpp-design-constraints}{LPP Design Constraints}
+
+Note: The labels in this diagram are abbreviations for the names shown above.
+In my code I will use full names to improve readability of the code.
