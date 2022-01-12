@@ -1,5 +1,5 @@
 .PHONY: all
-all:	jb-build
+all:	tex
 
 .PHONY: venv
 venv:
@@ -10,7 +10,7 @@ venv:
 reqs:
 	pip install -U pip
 	pip install -r requirements.txt
-	cp ~/_data/tikzmagic.py .direnv/python-3.9.9/lib/python3.9/site-packages/
+	cp ~/_data/tikzmagic.py .direnv/python-3.9.8/lib/python3.9/site-packages/
 
 .PHONY: tex
 tex:
